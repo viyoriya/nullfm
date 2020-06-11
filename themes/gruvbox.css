@@ -1,0 +1,519 @@
+
+/*** Fonts ****/
+
+@font-face {
+     src: url('../font/Roboto-Regular.ttf'); 
+}
+@font-face {
+     src: url('../font/Roboto-Bold.ttf'); 
+}
+@font-face {
+     src: url('../font/iosevka-thin.ttf'); 
+}
+
+.root {
+	-fx-background-color	: -vBgColorDefault;
+}
+
+/*** Colors ****/
+
+* {
+	 
+	 /****** Custom Nord *******/
+	
+    /* uncomment this block and dont forget to comment other block
+
+    -vBgColorDefault        : #3B4252;
+    -vLabelText             : #D8DEE9;
+
+    -vBgColor               : #434C5E;
+    -vTextColor             : #A5A5A5;
+    -vTextStatusColor       : #5E81AC;
+    
+    -vTabRowSelected        : #5E81AC;
+    -vTabPaneBgColor        : #e6e6e6;
+    -vTabPaneBgColor_s      : #76899b;
+    -vTabPaneBgColor_s_lbl  : #eff7ff;
+    
+    */ 
+    
+    /****** Gruv Box *******/
+    
+
+    
+    -vBgColorDefault        : #32302F;
+    -vLabelText             : #D65D0E;
+
+    -vBgColor               : #3C3836;
+    -vTextColor             : #A89984;
+    -vTextStatusColor       : #FB4934;
+    
+    -vTabRowSelected        : #FE8019;
+    -vTabPaneBgColor        : #EBDBB2;
+    -vTabPaneBgColor_s      : #FE8019;
+    -vTabPaneBgColor_s_lbl  : #282828;    
+    
+    
+    
+}
+
+/*** Labels  ****/
+
+#labelFm {
+	-fx-alignment 			: CENTER;
+    -fx-background-color	: -vBgColorDefault;
+    -fx-text-fill			: -vLabelText;
+    -fx-font-family			: 'Iosevka Thin';
+    -fx-font-size			: 22.0;
+}
+
+#labelDevices {
+	-fx-label-padding		: 10,0,0,0;
+    -fx-background-color	: -vBgColor;
+    -fx-text-fill			: -vTextColor;
+    -fx-font-family			: 'Roboto Bold';
+    -fx-font-size			: 13.0;
+}
+
+#labelBookmarks {
+	-fx-label-padding		: 10,0,0,0; 
+    -fx-background-color	: -vBgColor;
+    -fx-text-fill			: -vTextColor;   
+    -fx-font-family			: 'Roboto Bold';    
+    -fx-font-size			: 13.0;
+}
+
+#labelEmpty {
+	-fx-text-fill			: -vTextColor; 
+    -fx-font-family			: 'Roboto Bold';    
+    -fx-font-size			: 14.0;	
+}
+
+#labelTotalDiskSize {
+	-fx-text-alignment		: left;
+	-fx-label-padding		: 3,0,0,0; 	
+    -fx-background-color	: -vBgColorDefault;
+    -fx-text-fill			: -vTextStatusColor;
+    -fx-font-family			: 'Roboto Bold';
+    -fx-font-size			: 12.0;
+}
+#labelDiskInfo{
+    -fx-background-color	: -vBgColorDefault;
+    -fx-text-fill			: -vTextColor;
+    -fx-font-family			: 'Roboto Regular';
+    -fx-font-size			: 12.0;
+}
+
+/*** Min, Close Buttons   ****/
+
+#quitImage {
+	-fx-image				: url(/img/quit.png);
+}
+
+#quitImage:hover {
+	-fx-image				: url(/img/quit_red.png);
+}
+
+
+/*** Progress Bar  ****/
+
+.progress-bar {
+	 -fx-box-border			: -vTextColor;
+}
+
+.progress-bar > .bar {
+ 	-fx-accent				: -vTextStatusColor;
+    -fx-background-radius	: 0;
+	-fx-background-insets	: 0 0 0 0;
+    -fx-padding				: 0;    
+}
+
+.progress-bar > .track {
+  -fx-text-box-border		: -vTextColor;
+  -fx-control-inner-background: -vTextColor;
+    -fx-background-radius	: 0;
+    -fx-background-insets	: 0 0 0 0;
+    -fx-padding				: 0;    
+
+}
+
+/*** Buttons  ****/
+
+.button {
+	-fx-alignment 			: CENTER;
+    -fx-background-color	: -vBgColor;
+    -fx-padding				: 1 2 1 2;
+    -fx-background-radius	: 0 ;
+    -fx-border-radius		: 4;
+    -fx-text-fill			: -vTextColor;
+    -fx-font-family			: 'Roboto Regular';
+    -fx-font-size			: 13.0;
+}
+.button:hover {
+    -fx-background-color	: -vTextColor;
+    -fx-text-fill			: -vBgColor;
+    -fx-scale-y				: 1.1;
+}
+.button:pressed {
+    -fx-scale-y				: 0.9;
+    -fx-scale-x				: 0.9;
+}
+.topBarButton {
+	-fx-alignment 			: CENTER;
+    -fx-background-color	: -vBgColorDefault;
+    -fx-padding				: 0 5 0 5;
+    -fx-text-fill			: -vTextColor;
+    -fx-font-family			: 'Roboto Bold';
+    -fx-font-size			: 12.0;
+
+}
+.topBarButton:hover {
+    -fx-background-color	: -vTextColor;
+    -fx-text-fill			: -vBgColorDefault;
+    -fx-scale-y				: 1.1;
+}
+.topBarButton:pressed {
+    -fx-scale-y				: 0.9;
+    -fx-scale-x				: 0.9;
+}
+
+/*** Textfield  ****/
+
+.text-field {
+    -fx-background-color	: -vTextColor;
+    -fx-font-color			: -vBgColor;
+    -fx-background-radius	: 0 ;
+    -fx-font-family			: 'Roboto Regular';
+    -fx-font-size			: 12.0;    
+}
+
+.text-field:focused {
+    -fx-background-color	: -vTextColor;
+    -fx-font-color			: -vBgColor;
+}
+
+/*** Scroll Pane  ****/
+
+.scroll-pane > .viewport {
+   -fx-background-color		: -vTextColor;
+}
+
+.split-pane {
+	-fx-background-color	: -vBgColor;
+}
+.split-pane:horizontal > .split-pane-divider {
+   -fx-background-color		: transparent;
+}
+.split-pane:vertical > .split-pane-divider {
+   -fx-background-color		: transparent;
+}
+
+.topBarSplitButton {
+    -fx-background-radius	: 0 ;
+    -fx-border-radius		: 4;
+    -fx-background-color	: -vBgColor;
+    -fx-font-color			: -vTextColor;
+    -fx-font-family			: 'Roboto Regular';
+    -fx-font-size			: 12.0;    
+}
+.topBarSplitButton .arrow-button {
+    -fx-background-color	: -vBgColor;
+}
+.topBarSplitButton .menu-item:focused { 
+	-fx-background-color	: -vBgColor; 
+}
+.topBarSplitButton .menu-item:focused > .label { 
+	-fx-text-fill			: -vTextColor; 
+    -fx-font-family			: 'Roboto Regular';
+    -fx-font-size			: 12.0; 	
+}
+.topBarSplitButton > .label { 
+	-fx-text-fill			: -vBgColor; 
+    -fx-font-family			: 'Roboto Regular';
+    -fx-font-size			: 12.0; 	
+}
+
+/*** Context Menu  ****/
+
+.context-menu {
+	-fx-background-color	: -vBgColor;  
+}
+
+.menu-item {
+	-fx-background-color	: -vBgColor;
+    -fx-font-family			: 'Roboto Regular';
+    -fx-font-size			: 12.0;    
+}
+.menu-item .label{
+    -fx-text-fill			: -vTextColor;
+}
+
+.menu-item:hover, .menu-item:focused {
+	-fx-background-color	: -vTextColor; 
+	-fx-text-fill			: -vBgColor;	   			
+}
+.menu-item:focused > .label {
+	-fx-text-fill			: -vBgColor;	
+}
+
+/*** Tab  ****/
+
+.tab{
+    -fx-background-insets	: 0 1 0 1,0,0;
+    -fx-focus-color			: transparent; 
+    -fx-faint-focus-color	: transparent;
+}
+.tab .tab-label { 
+    -fx-alignment			: CENTER;
+    -fx-text-fill			: -vBgColor;
+    -fx-font-family			: 'Roboto Regular';
+    -fx-font-size			: 12.0;
+}
+.tab-pane
+{
+    -fx-tab-min-width:90px;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity				: 0;
+}
+.tab-pane .tab
+{
+    -fx-background-color	: -vTabPaneBgColor;
+    -fx-font-family			: 'Roboto Regular';
+    -fx-font-size			: 12.0;    
+}
+.tab-pane .tab:selected
+{
+    -fx-background-color	: -vTabPaneBgColor_s;
+    -fx-font-family			: 'Roboto Bold';
+    -fx-font-size			: 12.0;    
+}
+.tab:selected .tab-label { 
+    -fx-alignment			: CENTER;
+    -fx-font-family			: 'Roboto Bold';
+    -fx-text-fill			: -vTabPaneBgColor_s_lbl;
+}
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets	: 0, 0 0 1 0;
+    -fx-padding				: 5 2 0 0;   
+    -fx-font-family			: 'Roboto Regular';
+    -fx-font-size			: 12.0;    
+}
+.tab .tab-close-button {
+    -fx-background-color	: -vTabPaneBgColor;
+}
+
+/*** Table View  ****/
+
+.table-view{
+	-fx-background-color	: -vBgColorDefault;
+}
+.table-row-cell {
+	-fx-background-color	: transparent;
+}
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color	: -vTextColor;
+}
+.table-view .column-header .label{
+    -fx-font-family			: 'Roboto Bold';
+    -fx-font-size			: 13.0;  
+    -fx-text-fill			: -vBgColorDefault;
+    -fx-alignment			: CENTER_LEFT;
+}
+.table-view .cell{
+	-fx-font-family			: 'Roboto Regular';
+	-fx-font-size			: 13.0;  
+	-fx-background-color	: -vBgColorDefault;
+	-fx-border-color		: -vBgColorDefault;
+	-fx-text-fill			: -vTextColor;
+	-fx-alignment			: CENTER_LEFT;
+}
+
+.table-row-cell:selected {
+    -fx-background-color	: black;
+}
+.table-row-cell:selected .table-cell {
+    -fx-background-color	: -vBgColor;
+	-fx-border-color		: -vBgColor;
+    -fx-text-fill			: -vTabRowSelected;
+}
+
+.table-view .increment-button ,.table-view .decrement-button {
+    -fx-background-color	: -vBgColorDefault;
+    -fx-border-color		: -vBgColorDefault;
+    -fx-background-radius	: 0;
+    -fx-background-insets	: 0;   
+}
+.table-view .scroll-bar:horizontal .track,
+.table-view .scroll-bar:vertical .track{
+	-fx-background-color	: -vBgColorDefault;
+	-fx-border-color		: -vBgColorDefault;
+}
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color	: -vTextColor;
+	-fx-background-radius	: 0;
+}
+
+.table-view .scroll-bar:horizontal *.increment-arrow,
+.table-view .scroll-bar:horizontal *.decrement-arrow {
+    -fx-shape 				: " ";   
+}
+
+.table-view .scroll-bar:vertical *.increment-arrow,
+.table-view .scroll-bar:vertical *.decrement-arrow {
+    -fx-shape 				: " "; 
+}
+
+.table-view .scroll-bar > .corner {
+    -fx-background-color	: -vBgColor;
+}
+
+
+
+/*** Scroll pane   ****/
+
+#vboxHomeDir{
+    -fx-background-color	: -vBgColor;
+}
+
+#vboxDevices{
+    -fx-background-color	: -vBgColor;
+}
+
+#vboxBookmarkDir{
+    -fx-background-color	: -vBgColor;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color		: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color	: -vBgColor;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color	: transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color	: transparent;
+    -fx-border-color		: transparent;
+}
+
+.scroll-bar:vertical *.increment-arrow, 
+.scroll-bar:vertical *.decrement-arrow{
+    -fx-background-color	: -vBgColor;
+    -fx-shape 				: " ";   
+}
+
+.scroll-bar:horizontal *.increment-button, 
+.scroll-bar:horizontal *.decrement-button{
+    -fx-background-color	: -vBgColor;
+    -fx-padding				: 0;
+    -fx-shape 				: " ";   
+}
+
+.scroll-bar:horizontal *.increment-arrow, 
+.scroll-bar:horizontal *.decrement-arrow{
+    -fx-background-color	: -vBgColor;
+    -fx-padding				: 0;
+    -fx-shape 				: " ";   
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color	: transparent;
+    -fx-border-color		: transparent;
+    -fx-background-radius	: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color	: -vBgColorDefault;
+    -fx-background-radius	: 0em;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color	: -vBgColor;
+}
+
+
+/*** Alert  ****/
+
+.dialog-pane .text-flow{
+	-fx-text-fill			: -vTextColor; 
+	-fx-background-color	: -vBgColorDefault;
+}
+
+Text{
+	-fx-font-family			: "Roboto Regular";
+	-fx-font-size			: 13.0; 
+	-fx-fill				: -vTextColor; 
+	-fx-background-color	: -vBgColorDefault;
+}
+
+.dialog-pane {
+    -fx-background-color	: -vBgColorDefault;
+}
+
+.dialog-pane .label {
+    -fx-text-fill			: -vTextColor; 
+}
+
+.dialog-pane:header .header-panel {
+    -fx-background-color	: -vBgColorDefault;
+}
+
+.dialog-pane:header .header-panel .label {
+    -fx-font-family			: "Roboto Regular";
+    -fx-font-size			: 13.0;    
+}
+
+.dialog-pane .button{
+	-fx-font-family			: "Roboto Bold";
+	-fx-font-size			: 13.0; 
+   	-fx-background-color	: -vTabPaneBgColor_s;
+   	-fx-text-fill			: -vBgColorDefault; 
+}
+
+.dialog-pane .button:hover {
+   	-fx-background-color	: -vTabPaneBgColor_s;
+   	-fx-text-fill			: -vBgColorDefault;
+   	
+}
+
+
+.alert.confirmation.dialog-pane,
+.text-input-dialog.dialog-pane,
+.choice-dialog.dialog-pane {
+    -fx-background-color	: -vBgColorDefault;
+	-fx-border-color		: -vTextColor;
+}
+
+.alert.information.dialog-pane {
+    -fx-background-color	: -vBgColorDefault;
+	-fx-border-color		: -vTextColor;
+}
+
+.alert.error.dialog-pane {
+    -fx-background-color	: -vBgColorDefault;
+	-fx-border-color		: -vTextColor;
+}
+
+.alert.warning.dialog-pane {
+    -fx-background-color	: -vBgColorDefault;
+	-fx-border-color		: -vTextColor;
+}
+
+
+
+
+
+
+
+
+

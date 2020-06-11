@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@/css/fm.css" onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" fx:controller="com.viyoriya.fm.gui.FmMainController">
+  <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+		            <Label fx:id="labelFm" text="%button.title" >
+		            	<padding>
+			              <Insets left="10.0" />
+			             </padding>
+		            </Label>            
+		            <ImageView fx:id="homeImage" onMouseClicked="#homeImageButtonClicked" fitHeight="20.0" fitWidth="150.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+		              <image>
+		                  <Image url="@/img/home.png" />
+		               </image>
+		               <HBox.margin>
+		                  <Insets left="70.0" />
+		               </HBox.margin>
+		            </ImageView>
+			        <TextField fx:id="tf_path" onAction="#pathTextFieldOnEnter" maxHeight="20.0" minHeight="20.0" prefWidth="600.0">
+		               <HBox.margin>
+		                  <Insets left="10.0" />
+		               </HBox.margin>        
+		            </TextField>
+		            <Button fx:id="bt_back" onMouseClicked="#backButtonClicked"  mnemonicParsing="false" text="%button.topbar.back" styleClass="topBarButton" >
+		               <HBox.margin>
+		                  <Insets left="10.0" />
+		               </HBox.margin>
+		            </Button>
+			        <Button fx:id="bt_terminal" onAction="#terminalButtonClicked"  mnemonicParsing="false" text="%button.topbar.terminal" styleClass="topBarButton">
+		               <HBox.margin>
+		                  <Insets left="5.0" />
+		               </HBox.margin>	        
+			        </Button>
+		      	    <Button fx:id="bt_bookmark" onMouseClicked="#bookmarkButtonClicked" mnemonicParsing="false" text="%button.topbar.bookmark" styleClass="topBarButton">
+		               <HBox.margin>
+		                  <Insets left="5.0" />
+		               </HBox.margin>      	    
+		      	    </Button>      	    
+				    <Button fx:id="bt_devices" onMouseClicked="#devicesButtonClicked"  mnemonicParsing="false" text="%button.common.devices" styleClass="topBarButton">
+		               <HBox.margin>
+		                  <Insets left="5.0" />
+		               </HBox.margin>		    
+				    </Button>
+				    <!--
+		            <Separator maxHeight="20.0" orientation="VERTICAL">
+		               <HBox.margin>
+		                  <Insets />
+		               </HBox.margin>
+		               <padding>
+		                  <Insets left="30.0" right="30.0" />
+		               </padding>
+		            </Separator>
+				    <Button text="View" styleClass="topBarButton" ></Button>
+		            <Separator layoutX="839.0" layoutY="20.0" maxHeight="20.0" orientation="VERTICAL">
+		               <padding>
+		                  <Insets left="30.0" right="30.0" />
+		               </padding>
+		            </Separator>
+		            <SplitMenuButton mnemonicParsing="false" maxHeight="25.0" minHeight="25.0" text="Settings" styleClass="topBarSplitButton">
+		              <items>
+		                <MenuItem mnemonicParsing="false" text="Color Picker" styleClass="topBarButton" />
+		                <MenuItem mnemonicParsing="false" text="About" styleClass="topBarButton" />
+		              </items>
+		            </SplitMenuButton>
+		            -->
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+		            <ImageView fx:id="minImage" onMouseClicked="#minButtonClicked" opacity="0.33" fitHeight="20.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+		              <image>
+		                  <Image url="@/img/minus.png" />
+		               </image>
+		               <HBox.margin>
+		                  <Insets right="15.0"/>
+		               </HBox.margin>
+		            </ImageView>
+		            <ImageView fx:id="quitImage" onMouseClicked="#quitImgClicked" opacity="0.33" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" >
+		               <image>
+		                  <Image url="@/img/quit.png" />
+		               </image>
+		               <HBox.margin>
+		                  <Insets right="10.0"/>
+		               </HBox.margin>
+		            </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane dividerPositions="0.10375391032325339" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane maxWidth="150.0">
+                     <children>
+                        <VBox maxWidth="150.0" minWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                            <VBox maxHeight="60.0" minHeight="60.0" prefHeight="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           	<ScrollPane  layoutX="10.0" layoutY="10.0" prefHeight="250.0" maxHeight="250.0" >
+                           		<content>
+	                              <VBox fx:id="vboxHomeDir" spacing="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+	                                 <children>
+	                                 </children>
+	                                 <padding>
+	                                    <Insets left="10.0" />
+	                                 </padding>
+	                              </VBox>
+                           		</content> 
+                          	</ScrollPane>    
+					        <Label fx:id="labelDevices" text="%button.common.devices" />                                
+                           	<ScrollPane  layoutX="10.0" layoutY="10.0" prefHeight="150.0" maxHeight="150.0" >
+                           		<content>
+		                            <VBox fx:id="vboxDevices" layoutX="10.0" layoutY="10.0"  spacing="2.0">
+		                                 <children>
+		                                 </children>
+		                                 <padding>
+		                                    <Insets left="10.0" />
+		                                 </padding>                                
+		                              </VBox> 
+                           			</content> 
+                          	</ScrollPane>    
+                          	<Label fx:id="labelBookmarks" text="%button.sidebar.bookmarks" />
+                          	<ScrollPane  layoutX="10.0" layoutY="10.0" prefHeight="150.0" maxHeight="150.0" >
+      							<content>
+	                              <VBox fx:id="vboxBookmarkDir" layoutX="10.0" layoutY="10.0" spacing="2.0">
+	                                	 <children>
+	                                 	</children>
+	                                 	<padding>
+	                                    	<Insets left="10.0" />
+	                                 	</padding>
+	                              	</VBox>
+                           			</content> 
+                         		</ScrollPane>    
+                         </children>
+                        </VBox>
+                     </children></AnchorPane>
+                <AnchorPane fx:id="tabAnchorPane" >
+                     <children>
+                        <TabPane fx:id="tabPaneMain" tabClosingPolicy="SELECTED_TAB" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <!--<Tab fx:id="tabHome" text="Home" closable="false"></Tab>-->
+                            <Tab fx:id="tabPlus"  text="    +    " >
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+    </AnchorPane>
+      <HBox fx:id="hboxStatusBar" alignment="CENTER_RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+			<Label fx:id="labelDiskInfo" />   
+			<ProgressBar fx:id="progressBar"  prefHeight="12.0" prefWidth="60.0" progress="0.0" />
+			<Label fx:id="labelTotalDiskSize" >
+			   <HBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </HBox.margin>
+			</Label> 
+			<Button fx:id="bt_about" onAction="#aboutButtonClicked"  mnemonicParsing="false" text="%button.about" styleClass="topBarButton">
+			   <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+			</Button>
+         </children>
+      </HBox>
+  </children>
+</VBox>

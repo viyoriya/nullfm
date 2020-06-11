@@ -1,0 +1,106 @@
+@font-face {
+    src: url('../font/Roboto-Regular.ttf');
+}
+@font-face {
+     src: url('../font/Roboto-Bold.ttf'); 
+}
+
+* {
+     /**** Never Used **********/
+     /**** Never Used **********/
+     /**** Never Used **********/
+     /**** Never Used **********/     
+     
+	 /****** Custom Nord *******/
+	 
+	 
+    -vBgColorDefault        : #3B4252;
+    -vTextColor             : #A5A5A5;
+    -vTabPaneBgColor_s      : #76899B;
+  
+  	
+  	
+    /****** Gruv Box *******/
+    
+    /* uncomment this block and dont forget to comment other block
+    
+    -vBgColorDefault        : #32302F;
+    -vTextColor             : #A89984;
+    -vTabPaneBgColor_s      : #FE8019;
+      
+    */
+}
+
+
+.dialog-pane {
+    -fx-background-color	: -vBgColorDefault;
+    -fx-background-radius	: 0 ;
+}
+
+.dialog-pane .button{
+	-fx-font-family			: "Roboto Bold";
+	-fx-font-size			: 13.0; 
+   	-fx-background-color	: -vTabPaneBgColor_s;
+   	-fx-text-fill			: -vBgColorDefault; 
+}
+
+.dialog-pane .button:hover {
+   	-fx-background-color	: -vTabPaneBgColor_s;
+   	-fx-text-fill			: -vBgColorDefault;
+   	-fx-scale-y				: 1;
+}
+.dialog-pane .button:pressed {
+    -fx-scale-y				: 1;
+    -fx-scale-x				: 1;
+}
+
+.dialog-pane .text-flow{
+	-fx-text-fill			: -vTextColor; 
+	-fx-background-color	: -vBgColorDefault;
+	
+}
+
+Text{
+	-fx-font-size			: 13.0; 
+	-fx-fill				: -vTextColor; 
+	-fx-background-color	: -vBgColorDefault;
+	-fx-background-radius	: 0 ;
+}
+
+.dialog-pane .label {
+    -fx-text-fill			: -vTextColor; 
+}
+
+.dialog-pane:header .header-panel {
+    -fx-background-color	: -vBgColorDefault;
+}
+
+.dialog-pane:header .header-panel .label {
+    -fx-font-family			: "Roboto Regular";
+    -fx-font-size			: 13.0;    
+}
+
+/*** Alert  ****/
+
+.alert.confirmation.dialog-pane,
+.text-input-dialog.dialog-pane,
+.choice-dialog.dialog-pane {
+    -fx-background-color	: -vBgColorDefault;
+	-fx-border-color		: -vTextColor;
+}
+
+.alert.information.dialog-pane {
+    -fx-background-color	: -vBgColorDefault;
+	-fx-border-color		: -vTextColor;
+}
+
+.alert.error.dialog-pane {
+    -fx-background-color	: -vBgColorDefault;
+	-fx-border-color		: -vTextColor;
+}
+
+.alert.warning.dialog-pane {
+    -fx-background-color	: -vBgColorDefault;
+	-fx-border-color		: -vTextColor;
+}
+
