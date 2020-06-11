@@ -10,7 +10,7 @@ Experimental Javafx based file manager for Linux systems with nord/gruv box them
 
         `chmod +x *.sh`
       
-   3. run the build.sh and enter provide theme .css file name [nord.css or gruvbox.css]
+   3. run the build.sh and enter provided theme css file name [nord.css or gruvbox.css]
    
         `./build.sh`
    
