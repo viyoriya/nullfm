@@ -1,20 +1,17 @@
 ###  Username fm
 
 Experimental Javafx based file manager for Linux systems with nord/gruv box theme.
-
+ 
 
 #### Build
 
    1. Download / clone this repo.
-   2. change permission to build script
+   2. change permission to build script `chmod +x *.sh`      
+   3. Solus users run the `./solusBuild.sh` 
+   4. Enter provided theme css file name [nord.css or gruvbox.css] while build the source
+   5. File manager will be created with your USER name and listed in application menu
 
-        `chmod +x *.sh`
-      
-   3. run the build.sh and enter provided theme css file name [nord.css or gruvbox.css]
-   
-        `./build.sh`
-   
-   2. File manager will be listed in application menu
+Note: For other distros please install `openjfx-8` and `font-awesome` then run `./build.sh`
 
 #### Uninstall
    1. run the uninstall.sh file

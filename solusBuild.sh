@@ -51,7 +51,7 @@ else
 fi
 
 # chage it for other distro
-#sudo eopkg it openjfx-8 font-awesome-ttf
+sudo eopkg it openjfx-8 font-awesome-ttf
 # change it for other distro
 
 fmname="$USER""fm"
