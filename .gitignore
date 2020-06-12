@@ -2,3 +2,7 @@ bin/
 nullfm/bin/
 *.class
 *.log
+clean.sh
+uninstall.sh
+config/vjfm.sh
+config/vjfm.desktop

@@ -65,9 +65,9 @@ jar xf ../nullfm/lib/commons-io-2.6.jar
 jar xf ../nullfm/lib/log4j-api-2.13.3.jar
 jar xf ../nullfm/lib/log4j-core-2.13.3.jar
 jar cfm $fmname.jar ../config/MANIFEST.txt *
-mkdir -p /opt/$fmname && mv $fmname.jar /opt/$fmname/
+sudo mkdir -p /opt/$fmname && sudo mv $fmname.jar /opt/$fmname/
 cd .. && rm -r build
-cp config/icon.png /opt/$fmname/
+sudo cp config/icon.png /opt/$fmname/        
 makeMenuFile $fmname && makeSHFile $fmname && makeUninstallFile $fmname
 cp config/$fmname.desktop ~/.local/share/applications/
 sudo cp config/$fmname.sh /usr/local/bin/$fmname
