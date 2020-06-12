@@ -184,11 +184,14 @@
     -fx-background-radius	: 0 ;
     -fx-font-family			: 'Roboto Regular';
     -fx-font-size			: 12.0;    
+    -fx-highlight-fill      : null;
+    -fx-highlight-text-fill : -vTabPaneBgColor;   
 }
 
 .text-field:focused {
     -fx-background-color	: -vTextColor;
     -fx-font-color			: -vBgColor;
+    -fx-focus-color         : transparent; 
 }
 
 /*** Scroll Pane  ****/
@@ -270,7 +273,7 @@
 }
 .tab-pane
 {
-    -fx-tab-min-width:90px;
+    -fx-tab-min-width       : 90px;
 }
 .tab-pane .tab-header-area .tab-header-background {
     -fx-opacity				: 0;
