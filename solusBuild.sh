@@ -8,7 +8,7 @@ function makeMenuFile(){
 touch config/$1.desktop && > config/$1.desktop
 echo "[Desktop Entry]" >> config/$1.desktop 
 echo "Name=$1"  >> config/$1.desktop 
-echo "Exec=/usr/lib64/openjdk-8/bin/java -XX:+UseG1GC -Xms16M -Xmx50M -jar /opt/$1/$1.jar"  >> config/$1.desktop 
+echo "Exec=$JAVA_HOME/bin/java -XX:+UseG1GC -Xms16M -Xmx50M -jar /opt/$1/$1.jar"  >> config/$1.desktop 
 echo "icon=/opt/$1/icon.png"  >> config/$1.desktop 
 echo "Type=Application"  >> config/$1.desktop 
 echo "Terminal=false"  >> config/$1.desktop 
@@ -17,7 +17,7 @@ echo "Terminal=false"  >> config/$1.desktop
 function makeSHFile(){
 touch config/$1.sh && > config/$1.sh
 echo "#! /bin/bash" >> config/$1.sh
-echo "export JAVA_HOME=/usr/lib64/openjdk-8" >> config/$1.sh
+echo "export JAVA_HOME=$JAVA_HOME" >> config/$1.sh
 echo "export PATH=$PATH:$JAVA_HOME/bin:" >> config/$1.sh
 echo " " >> config/$1.sh
 echo "java -XX:+UseG1GC -Xms16M -Xmx50M -jar /opt/$1/$1.jar" >> config/$1.sh
@@ -29,7 +29,7 @@ touch uninstall.sh && > uninstall.sh
 echo "#! /bin/bash" >> uninstall.sh
 echo " " >> uninstall.sh
 echo "sudo rm /usr/local/bin/$1" >> uninstall.sh
-echo "rm -r /opt/$1" >> uninstall.sh
+echo "sudo rm -r /opt/$1" >> uninstall.sh
 echo "rm ~/.local/share/applications/$1.desktop" >> uninstall.sh
 echo "update-desktop-database ~/.local/share/applications/" >> uninstall.sh
 echo "echo " >> uninstall.sh
@@ -70,6 +70,7 @@ cd .. && rm -r build
 sudo cp config/icon.png /opt/$fmname/
 makeMenuFile $fmname && makeSHFile $fmname && makeUninstallFile $fmname
 cp config/$fmname.desktop ~/.local/share/applications/
+if [ ! -d /usr/local/bin ]; then sudo mkdir -p /usr/local/bin ; fi
 sudo cp config/$fmname.sh /usr/local/bin/$fmname
 update-desktop-database ~/.local/share/applications/
 echo 
